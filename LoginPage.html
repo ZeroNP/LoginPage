@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login</title>
+<link rel="stylesheet" href="login_style.css" />
+<style>
+input {
+	width: 20vw;
+	border: 2px solid #ddd;
+	border-radius: 4px;
+	margin: 4px 0;
+	outline: none;
+	padding: 8px;
+	box-sizing: border-box;
+	transition: 0.3s;
+}
+
+input:focus {
+	border-color: dodgerBlue;
+	box-shadow: 0 0 8px 0 dodgerBlue;
+}
+
+.inputWithIcon input {
+	padding-left: 40px;
+}
+
+.input_invalid {
+	border: 2px solid pink;
+	border-color: red;
+}
+
+.input_invalid:focus {
+	border: 2px solid red;
+	border-color: red;
+	box-shadow: 0 0 8px 0 red;
+}
+@media only screen and (max-width: 600px) {
+	.left_panel{
+	display: none;
+	}
+	.right_panel{
+	
+	width: 100%;
+	}
+	input{
+	width: 60vw;}
+}
+</style>
+</head>
+
+<body>
+	<div class="main_card" align="center">
+		<div class="left_panel"></div>
+		<div class="right_panel">
+			<form name="loginForm" action="LoginServlet"  method="POST" style="margin-top: 52%;">
+				<div class="row">
+					<p style="width: 80%; color: #555">Welcome :)</p>
+				</div>
+				<div class="row">
+					<input type="text" id="uid" name="userId" placeholder="User ID"
+						required /> <br />
+				</div>
+				<div class="row">
+					<input type="password" id="upwd" name="userPwd"
+						placeholder="Password" required />
+				</div>
+				<div class="row">					
+					<div class="c2"></div>
+					<div class="c4">
+						<button type="submit">Login</button>
+					</div>
+					<div class="c4" >
+						<a href="#">Forgot Password?</a>
+					</div>
+					<div class="c2"></div>
+				</div>
+			</form>
+		</div>
+		<div></div>
+	</div>
+	<footer>
+		&copy; Copyright 2020 | <a href="#"> Terms and Conditions </a>| <a
+			href="#"> About us </a>| <a href="#"> Contact us </a>
+	</footer>
+	<script>
+		if (document.getElementById('valid').innerHTML == 'Invalid') {
+			document.getElementById('uid').classList.add('input_invalid');
+			document.getElementById('upwd').classList.add('input_invalid');
+		}
+	</script>
+</body>
+
+</html>
